@@ -1,0 +1,9 @@
+{
+    "name": "michaelyousrie/bytology-task",
+    "description": "A simple console application.",
+    "autoload": {
+        "psr-4": {
+            "Bytology\\": "src/"
+        }
+    }
+}
