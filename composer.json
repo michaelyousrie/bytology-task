@@ -2,6 +2,9 @@
     "name": "michaelyousrie/bytology-task",
     "description": "A simple console application.",
     "autoload": {
+        "files": [
+            "src/helper_functions.php"
+        ],
         "psr-4": {
             "Bytology\\": "src/"
         }

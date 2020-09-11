@@ -1,2 +1,38 @@
 #!/usr/bin/env php
 <?php
+// ====== Require composer autoloader ======
+require_once("vendor/autoload.php");
+
+// ====== Use the required classes from their namespaces ======
+use Bytology\Bootstrap\Bootstrap;
+use Bytology\Calculator\Calculator;
+use Bytology\Database\Database;
+use Bytology\Helpers\ArgumentHandler;
+use Bytology\Helpers\Log;
+
+// ====== Bootstrap the application ======
+Bootstrap::init();
+ArgumentHandler::init($argv);
+
+// ====== Script logic ======
+$calculator = new Calculator(ArgumentHandler::$num1, ArgumentHandler::$num2);
+$calculator->display();
+
+// Save results to the DB
+db()->insert('results', [
+    'num1'          => ArgumentHandler::$num1,
+    'num2'          => ArgumentHandler::$num2,
+    'avg'           => $calculator->getAvg(),
+    'area'          => $calculator->getArea(),
+    'area_squared'  => $calculator->getAreaSquared()
+]);
+
+// Fetch latest 5 results
+$results = db()->fetch('results');
+
+// Display resutls to the terminal
+Log::error("===================== Latest 5 Rows =====================");
+Log::info("\n\n");
+Log::table(array_keys($results[0]), array_values($results));
+Log::br();
+Log::error("=============================================");
