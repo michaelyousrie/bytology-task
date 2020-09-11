@@ -1,8 +1,8 @@
 <?php
 require_once("vendor/autoload.php");
 
-use Bytology\Bootstrap\Bootstrap;
 use Bytology\Helpers\View;
+use Bytology\Bootstrap\Bootstrap;
 
 Bootstrap::init();
 
