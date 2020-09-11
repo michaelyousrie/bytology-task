@@ -24,6 +24,7 @@ This is a simple terminal script requested by Bytology company to do the followi
 ## Observation and Assumptions:
 - Using the included screenshot, I can tell that the oldest queue job with ID 9 has been stuck on processing for about 4 hours till the next queue order was made. 
 - This makes me think that the queue job has failed or taking a really long time which isn't ideal either.
+- We can safely assume that the job failed based on the provided data `Integration(import): Completed with result "ERRORS"`
 - Assuming that the queue job failed, I can see that the next queue jobs are still waiting for that failed job to finish which is a problem because they'll just be hanging there forever.
 
 ## Questions:
