@@ -11,6 +11,7 @@ class Bootstrap
     {
         define("__ROOT__", __DIR__ . "/../../");
         define("__ENV__", __ROOT__ . ".env");
+        define("__VIEWS__", __ROOT__ . "views/");
 
         Env::init();
         Container::set('db', new Database());

@@ -4,11 +4,10 @@
 require_once("vendor/autoload.php");
 
 // ====== Use the required classes from their namespaces ======
+use Bytology\Helpers\Log;
 use Bytology\Bootstrap\Bootstrap;
 use Bytology\Calculator\Calculator;
-use Bytology\Database\Database;
 use Bytology\Helpers\ArgumentHandler;
-use Bytology\Helpers\Log;
 
 // ====== Bootstrap the application ======
 Bootstrap::init();
